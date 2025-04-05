@@ -43,11 +43,16 @@ def contact():
 @app.route('/appointment')
 def appointment():
     return render_template('appointment.html')
+
+@app.route('/disease')
+def disease():
+    return render_template('disease.html')
+
 #------------
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('homepage.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
