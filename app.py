@@ -15,9 +15,6 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 app = Flask(__name__)
 
 #------------
-@app.route('/')
-def home():
-    return render_template('homepage.html')
 
 @app.route('/index')
 def index():
@@ -36,15 +33,15 @@ def about():
     return render_template('about.html')
 
 @app.route('/blog')
-def blog():
+def blog_page():
     return render_template('blog.html')
 
 @app.route('/contact')
-def blog():
+def contact():
     return render_template('contact.html')
 
 @app.route('/appointment')
-def blog():
+def appointment():
     return render_template('appointment.html')
 #------------
 
@@ -146,4 +143,5 @@ def process_ai_response(ai_text):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+
