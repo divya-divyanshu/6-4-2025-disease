@@ -62,10 +62,10 @@
                 <i class="fa fa-heartbeat mr-2"></i> PredictiCare
             </a>
             <div class="hidden md:flex space-x-6">
-                <a href="./homepage.html" class="hover:text-primary font-medium">Home</a>
-                <a href="./disease.html" class="hover:text-primary font-medium">Diseases</a>
-                <a href="#about" class="hover:text-primary font-medium">About Us</a>
-                <a href="./contact.html" class="hover:text-primary font-medium">Contact</a>
+                <a href="{{ url_for('home') }}" class="hover:text-primary font-medium">Home</a>
+                <a href="{{ url_for('disease') }}" class="hover:text-primary font-medium">Diseases</a>
+                <a href="{{ url_for('about') }}" class="hover:text-primary font-medium">About Us</a>
+                <a href="{{ url_for('contact') }}" class="hover:text-primary font-medium">Contact</a>
             </div>
             <div id="google_translate_element" class="text-sm"></div>
         </div>

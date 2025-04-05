@@ -52,10 +52,10 @@
         <i class="fa fa-heartbeat mr-2"></i> Appointment
       </a>
       <div class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="./homepage.html" class="hover:text-blue-600 font-bold">Home</a>
-        <a href="./disease.html" class="hover:text-blue-600 font-bold">Diseases</a>
-        <a href="./about.html" class="hover:text-blue-600 font-bold">About Us</a>
-        <a href="./contact.html" class="hover:text-blue-600 font-bold">Contact</a>
+        <a href="{{ url_for('home') }}" class="hover:text-blue-600 font-bold">Home</a>
+        <a href="{{ url_for('disease') }}" class="hover:text-blue-600 font-bold">Diseases</a>
+        <a href="{{ url_for('about') }}" class="hover:text-blue-600 font-bold">About Us</a>
+        <a href="{{ url_for('contact') }}" class="hover:text-blue-600 font-bold">Contact</a>
       </div>
       <div id="google_translate_element" class="text-sm"></div>
     </div>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Healthcare</title>
+    <title>Disease Detection</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Tailwind CSS CDN -->
@@ -37,11 +37,11 @@
 </head>
 
 <body class="font-sans">
-     <!-- Topbar Start -->
-     <div class="hidden lg:block bg-white border-b py-2">
+    <!-- Topbar Start -->
+    <div class="hidden lg:block bg-white border-b py-2">
         <div class="container mx-auto px-4 flex justify-between">
             <div class="flex items-center space-x-3">
-                <a class="text-gray-700 flex items-center" href="#"><i class="fa fa-heartbeat mr-2"></i>YOUR PERSONAL DOCTOR</a>
+                <a class="text-gray-700 hover:text-primary flex items-center" href="#"> <i class="fa fa-heartbeat mr-2"></i>YOUR PERSONAL DOCTOR</a>
                 <span class="text-gray-700"></span>
                 <a class="text-gray-700 flex items-center" href="#"></a>
             </div>
@@ -55,115 +55,31 @@
         </div>
     </div>
     <!-- Topbar End -->
-    <!-- navbar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
+
+    <!-- Navbar Start -->
+    <nav class="sticky top-0 bg-white shadow z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-primary text-2xl font-bold flex items-center">
-                <i class="fa fa-heartbeat mr-2"></i> PredictiCare
+            <!-- Logo -->
+            <a href="#" class="text-primary hover:text-primary text-2xl font-bold flex items-center">
+                <i class="fa fa-clinic-medical mr-2"></i>PredictiCare
             </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="./homepage.html" class="hover:text-primary font-bold">Home</a>
-                <a href="#disease-gallery" class="hover:text-primary font-bold">Diseases</a>
-                <a href="./about.html" class="hover:text-primary font-bold">About Us</a>
-                <a href="./contact.html" class="hover:text-primary font-bold">Contact</a>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="{{ url_for('home') }}" class="hover:text-primary font-bold">Home</a>
+                <a href="{{ url_for('about') }}" class="hover:text-primary font-bold">Our Team</a>
+                <a href="{{ url_for('doctor') }}" class="hover:text-primary font-bold">Doctor</a>
+                <a href="{{ url_for('disease') }}" class="hover:text-primary font-bold">Diseases</a>
+                <a href="{{ url_for('blog_page') }}" class="hover:text-primary font-bold">Why Us</a>
+                <a href="{{ url_for('contact') }}" class="hover:text-primary font-bold">Contact</a>
             </div>
-            <div id="google_translate_element" class="text-sm"></div>
+
+            <!-- Login / Signup Buttons -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="./login signup/login.html" class="text-primary font-semibold hover:underline">Login</a>
+                <a href="./login signup/signup.html" class="bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-700 transition duration-300">Sign Up</a>
+                <div id="google_translate_element" class="ml-4"></div>
+            </div>
         </div>
     </nav>
-    <!-- Disease Gallery Section -->
-    <section id="disease-gallery" class="py-16 bg-white text-center">
-        <div class="container mx-auto px-4">
-            <div id="google_translate_element" class="mb-4 text-right"></div>
-            <h2 class="text-4xl font-bold mb-6 text-primary">You Can Overcome These Diseases</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-10">With the right diagnosis and support, recovery is possible. Stay hopeful, stay informed, and know you're not alone.</p>
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Disease Cards -->
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/OIP.jpeg" alt="Flu" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Influenza (Flu)</h3>
-                        <p class="text-sm text-gray-600 mt-2">Rest, hydration, and time heal well.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/cold.jpeg" alt="Cold" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Common Cold</h3>
-                        <p class="text-sm text-gray-600 mt-2">Warmth and love help you heal.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/covid19.jpeg" alt="COVID-19" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">COVID-19</h3>
-                        <p class="text-sm text-gray-600 mt-2">Proper care brings full recovery.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/diabetese.jpeg" alt="Diabetes" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Diabetes</h3>
-                        <p class="text-sm text-gray-600 mt-2">Manageable with lifestyle and support.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/asthama.jpeg" alt="Asthma" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Asthma</h3>
-                        <p class="text-sm text-gray-600 mt-2">With inhalers and care, you breathe easy.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/hypertension.jpeg" alt="Hypertension" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Hypertension</h3>
-                        <p class="text-sm text-gray-600 mt-2">Stay calm, eat well, and thrive.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/migrane.jpeg" alt="Migraine" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Migraine</h3>
-                        <p class="text-sm text-gray-600 mt-2">Relief is possible. Seek support.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="./image/depression.jpeg" alt="Depression" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Depression</h3>
-                        <p class="text-sm text-gray-600 mt-2">You are not alone. Healing is near.</p>
-                    </div>
-                </div>
-                <!-- <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://source.unsplash.com/300x200/?anxiety" alt="Anxiety" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl text-primary">Anxiety</h3>
-                        <p class="text-sm text-gray-600 mt-2">You are stronger than your fears.</p>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-    <!-- Predict Disease Button Section -->
-        <div class="text-center my-10">
-            <a href="index.html">
-                <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
-                    Predict disease
-                </button>
-            </a>
-        </div>
-
-
-    <!-- Footer Section -->
-    <footer class="bg-primary text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-xl font-bold mb-2">About Us</h3>
-            <p class="text-sm max-w-xl mx-auto">We are dedicated to providing accurate disease detection tools and promoting health awareness. Our team of experts is committed to helping you take control of your health with compassion and care.</p>
-            <div class="mt-4">
-                <p class="text-xs">&copy; 2025 Disease Detection System. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>
+    <!-- Navbar End -->
