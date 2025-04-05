@@ -14,6 +14,40 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 app = Flask(__name__)
 
+#------------
+@app.route('/')
+def home():
+    return render_template('homepage.html')
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/result')
+def result():
+    return render_template('result.html')
+
+@app.route('/doctor')
+def doctor():
+    return render_template('doctor.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('/contact')
+def blog():
+    return render_template('contact.html')
+
+@app.route('/appointment')
+def blog():
+    return render_template('appointment.html')
+#------------
+
 @app.route('/')
 def home():
     return render_template('index.html')
