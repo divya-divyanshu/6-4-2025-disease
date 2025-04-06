@@ -111,11 +111,13 @@ def predict():
         specialists = []
 
 
+    print("AI Response:", ai_text)  # Debugging output
+
     for s in specialists:
         print(s)
     
-    # while len(specialists) < len(diseases):
-    #     specialists.append("General Physician")
+    while len(specialists) < len(diseases):
+        specialists.append("General Physician")
 
 
     # return render_template('result.html', diseases=diseases)
