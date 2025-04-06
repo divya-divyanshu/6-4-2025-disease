@@ -66,14 +66,12 @@
 
             <!-- Navigation Links -->
             <div class="hidden lg:flex items-center space-x-6">
-                <a href="{{ url_for('home') }}" class="hover:text-primary  font-bold">Home</a>
+                <a href="{{ url_for('home') }}" class="hover:text-primary font-bold">Home</a>
                 <a href="{{ url_for('about') }}" class="hover:text-primary font-bold">Our Team</a>
-                <a href="{{ url_for('doctor') }}" class="hover:text-primary  font-bold">Doctor</a>
+                <a href="{{ url_for('doctor') }}" class="hover:text-primary font-bold">Doctor</a>
                 <a href="{{ url_for('disease') }}" class="hover:text-primary font-bold">Diseases</a>
                 <a href="{{ url_for('blog_page') }}" class="hover:text-primary font-bold">Why Us</a>
-                <!-- <a href="#blog" class="hover:text-primary">Blog</a> -->
                 <a href="{{ url_for('contact') }}" class="hover:text-primary font-bold">Contact</a>
-
             </div>
 
             <!-- Login / Signup Buttons -->
@@ -93,8 +91,8 @@
                 <h5 class="uppercase tracking-widest border-b border-white mb-2 inline-block">Welcome to Healthcare</h5>
                 <h1 class="text-5xl font-bold leading-tight mb-6">Easy Detection of Disease at your Home</h1>
                 <div class="space-x-4">
-                    <a href="./disease.html" class="bg-white text-primary px-6 py-3 rounded-full font-semibold">Find Disease</a>
-                    <a href="./appointment.html" class="border border-white px-6 py-3 rounded-full font-semibold">Appointment</a>
+                    <a href="{{ url_for('disease') }}" class="bg-white text-primary px-6 py-3 rounded-full font-semibold">Find Disease</a>
+                    <a href="{{ url_for('appointment') }}" class="border border-white px-6 py-3 rounded-full font-semibold">Appointment</a>
                 </div>
             </div>
         </div>

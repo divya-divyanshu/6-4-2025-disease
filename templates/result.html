@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Diagnosis Result</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -20,10 +18,12 @@
         }
     </script>
 
-    <!-- Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Google Translate -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -61,7 +61,7 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="text-primary hover:text-primary text-2xl font-bold flex items-center">
-                <i class="fa fa-clinic-medical mr-2"></i>PredictiCare
+                <i class="fa fa-heartbeat mr-2"></i>PredictiCare
             </a>
 
             <!-- Navigation Links -->
@@ -76,10 +76,34 @@
 
             <!-- Login / Signup Buttons -->
             <div class="hidden lg:flex items-center space-x-4">
-                <a href="./login signup/login.html" class="text-primary font-semibold hover:underline">Login</a>
-                <a href="./login signup/signup.html" class="bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-700 transition duration-300">Sign Up</a>
+                
                 <div id="google_translate_element" class="ml-4"></div>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <div class="max-w-2xl mx-auto mt-10">
+        <h1 class="text-3xl font-bold mb-6 text-center">Diagnosis Result</h1>
+        <!-- Loop over result -->
+        {% for disease, specialist in combined %}
+        <div class="bg-white shadow-md rounded p-4 mb-4">
+            <h2 class="text-xl font-semibold text-primary">{{ disease.name }}</h2>
+            <p class="text-gray-600 mb-2">
+                We recommend you to consult the specialist, <strong>{{ specialist }}</strong>.
+            </p>
+            <!-- <form action="/doctors" method="get"> -->
+                <button onclick="" type="submit" class="bg-primary text-white px-4 py-2 rounded hover:bg-cyan-700">
+                    <a href="./doctor.html">View Doctors</a>
+                    
+                </button>
+            <!-- </form> -->
+        </div>
+        {% endfor %}
+
+        <div class="text-center mt-6">
+            <a href="/" class="bg-primary text-white px-4 py-2 rounded hover:bg-cyan-700">Try Again</a>
+        </div>
+    </div>
+</body>
+</html>
